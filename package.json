@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "babel --no-babelrc app --out-dir lib --presets=es2015,react",
+    "build_file": "babel --no-babelrc app/CheckList.js --out-file checklist.min.js --presets=es2015,react --minified",
     "dev": "webpack-dev-server -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.24.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-regenerator": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-react-hmre": "^1.1.1",
@@ -35,8 +38,10 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "moment": "^2.18.1",
     "react": "^15.4.2",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2"
   }
 }

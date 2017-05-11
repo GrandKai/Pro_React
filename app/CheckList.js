@@ -16,5 +16,6 @@ export default class CheckList extends Component {
         <ul>{ tasks }</ul>
       </div>
     );
+
   }
 }
