@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './example3/Card'
+import NewsList from './example3/NewsList'
 
 require('./style/card.css');
 
 const app = document.createElement('div');
 document.body.appendChild(app);
+const app2 = document.createElement('div');
+document.body.appendChild(app2);
 let props = {
   href: "http://www.linlongtougu.com/KKplayerVod/index.html",
   imageUrl: "http://resource.1shitou.cn/resource/images/video.png",
@@ -18,4 +21,7 @@ let props = {
   ".card-content": "column-detail"
 };
 
-ReactDOM.render(<Card {...props}/>, app);
+let newsList = [{id:1, title: "测试", key: 1}, {id:2, title: "测试2",key: 2}];
+
+{/*ReactDOM.render(<Card {...props}/>, app);*/}
+ReactDOM.render(<NewsList newsList={ newsList }/>, app2);

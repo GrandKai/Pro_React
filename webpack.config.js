@@ -96,14 +96,14 @@ module.exports = {
         new ExtractTextWebpackPlugin('style/app.css'),
         new ExtractTextWebpackPlugin('style/card.css'),
         // 公共代码 bundle
-        new webpack.optimize.CommonsChunkPlugin({
-          name: 'vendor', // Specify the common bundle's name.
-          filename: 'vendor.js',
-          minChunks: function (module) {
-            // this assumes your vendor imports exist in the node_modules directory
-            return module.context && module.context.indexOf('node_modules') !== -1;
-          }
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //   name: 'vendor', // Specify the common bundle's name.
+        //   filename: 'vendor.js',
+        //   minChunks: function (module) {
+        //     // this assumes your vendor imports exist in the node_modules directory
+        //     return module.context && module.context.indexOf('node_modules') !== -1;
+        //   }
+        // }),
         // webpack 运行时代码
         new webpack.optimize.CommonsChunkPlugin({
           name: 'manifest'
