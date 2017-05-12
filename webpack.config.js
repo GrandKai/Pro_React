@@ -6,13 +6,15 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const APP_PATH = path.resolve(__dirname, 'app');
 const BUILD_PATH = path.resolve(__dirname, 'build');
+const LIB_PATH = path.resolve(__dirname, 'lib');
 
 module.exports = {
     entry: {
 
-      main: path.resolve(APP_PATH, 'App.jsx'),
-      // main: path.resolve(__dirname, 'app/examples/Index.jsx'),
-      vendor: 'moment'
+      main: path.resolve(APP_PATH, 'index.js'),
+      // main: path.resolve(APP_PATH, 'table.js'),
+      // main: path.resolve(APP_PATH, 'App.js'),
+      // vendor: 'moment'
         // index: path.resolve(APP_PATH, 'index.jsx')
     },
     output: {
@@ -29,10 +31,11 @@ module.exports = {
             {
               test: /\.css$/,
               use: ExtractTextWebpackPlugin.extract({
-                use: 'css-loader'
+                use: ['css-loader']
               }),
               include: APP_PATH
             },
+
 
             {
                   test: /\.js?$/,
@@ -40,7 +43,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                       // 添加 ES6， react 语法支持
-                      presets: [['es2015',{ modules: false }], 'react','stage-2'],
+                      presets: [['es2015',{ modules: false }], 'react'],
                       plugins: [
                         // 支持语法动态导入 Using import()
                         'syntax-dynamic-import',
@@ -48,6 +51,7 @@ module.exports = {
                         // To use ES2017 async/await with import():
                         'transform-async-to-generator',
                         'transform-regenerator',
+
                         'transform-runtime'
                       ]
 
@@ -81,6 +85,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
+    devtool: "eval-source-map",
     devServer: {
         // https: true,
         host: '192.168.4.71',
@@ -89,6 +94,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ title: '使用HtmlWebpackPlugin' }),
         new ExtractTextWebpackPlugin('style/app.css'),
+        new ExtractTextWebpackPlugin('style/card.css'),
         // 公共代码 bundle
         new webpack.optimize.CommonsChunkPlugin({
           name: 'vendor', // Specify the common bundle's name.

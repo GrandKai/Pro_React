@@ -1,0 +1,51 @@
+/*cx*/
+.recommend-wrap{
+    /*overflow: hidden;*/
+
+}
+.recommend-column{
+    width: 30.5%;
+    margin-right: 2%;
+    float: left;
+    border: solid 1px #BFBFBF;
+    border-radius: 10px;
+    min-height: 100px;
+    padding: 16px 0;
+}
+.recommend-column a{display: block; }
+
+.recommend-column .column-img{
+    width:36%;
+    float: left;
+    padding-left: 3%;
+}
+.recommend-column .column-text{
+    width: 60%;
+    float: left;
+    /*overflow: hidden;*/
+}
+.recommend-column .column-text h1{
+    color: #000000;
+    font-size: 28px;
+    font-weight: normal;
+    height: 37px;
+    overflow: hidden;
+    /* margin: 20px 0px 15px 20px ;*/
+}
+.recommend-column .column-detail{
+    color: #B9B4AF;
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    /*white-space:nowrap;*//*å¼ºåˆ¶æ–‡æœ¬æ¢è¡Œ*/
+    text-overflow:ellipsis;
+    /*overflow: hidden;*/
+    padding: 15px 0;
+    height: 80px;
+}
+.recommend-column .column-detail .qr{
+    width: 191px;
+    height: 38px;
+    padding-top: 5px;
+    position: relative;
+}
