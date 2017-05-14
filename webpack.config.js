@@ -98,6 +98,7 @@ module.exports = {
         new HtmlWebpackPlugin({ title: '使用HtmlWebpackPlugin' }),
         new ExtractTextWebpackPlugin('resources/style/app.css'),
         new ExtractTextWebpackPlugin('resources/style/card.css'),
+        new ExtractTextWebpackPlugin('resources/style/style.css'),
         // 公共代码 bundle
         // new webpack.optimize.CommonsChunkPlugin({
         //   name: 'vendor', // Specify the common bundle's name.

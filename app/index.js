@@ -6,6 +6,7 @@ import NewsDetail from './example3/NewsDetail'
 import NewsBox from './example3/NewsBox'
 
 require('./resources/style/card.css');
+require('./resources/style/style.css');
 
 const app = document.createElement('div');
 document.body.appendChild(app);
