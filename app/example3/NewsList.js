@@ -4,12 +4,12 @@
 import React from 'react';
 
 export default function NewsList(props){
-  const list = props.newsList.map(function (idx,item) {
-    console.log(idx, item);
+  console.log("--------------",props);
+  const list = props.list.map(function (item, index, origin) {
     return (
-      <li key={item.id}>
-        <a href="http://www.linlongtougu.com/infomation/2659/4/detail.html" target="_blank">
-          <span className="time">05-12</span><span className="cc" title="“一带一路”国际合作高峰论坛14日开幕">“一带一路”国际合作高峰论坛14日开幕</span>
+      <li key={item.id} className={(index===0?"first":"")}>
+        <a href={item.href} target="_blank">
+          <span className="time">05-12</span><span className="cc" title={item.title}>{item.title}</span>
         </a>
       </li>
     );

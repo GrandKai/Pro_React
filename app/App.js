@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import KanbanBorad from './KanbanBoard';
 
-require('./style/app.css');
+require('./resources/style/app.css');
 // var moment = require('moment');
 
 let cardsList = [

@@ -35,7 +35,10 @@ module.exports = {
               }),
               include: APP_PATH
             },
-
+            {
+              test: /\.(jpg|png|gif)$/,
+              use: 'file-loader'
+            },
 
             {
                   test: /\.js?$/,
@@ -88,13 +91,13 @@ module.exports = {
     devtool: "eval-source-map",
     devServer: {
         // https: true,
-        host: '192.168.4.71',
+        host: 'localhost',
         port: 8081
     },
     plugins: [
         new HtmlWebpackPlugin({ title: '使用HtmlWebpackPlugin' }),
-        new ExtractTextWebpackPlugin('style/app.css'),
-        new ExtractTextWebpackPlugin('style/card.css'),
+        new ExtractTextWebpackPlugin('resources/style/app.css'),
+        new ExtractTextWebpackPlugin('resources/style/card.css'),
         // 公共代码 bundle
         // new webpack.optimize.CommonsChunkPlugin({
         //   name: 'vendor', // Specify the common bundle's name.
