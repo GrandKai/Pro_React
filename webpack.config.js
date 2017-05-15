@@ -18,7 +18,8 @@ module.exports = {
         // index: path.resolve(APP_PATH, 'index.jsx')
     },
     output: {
-        filename: '[name].[chunkhash].js',
+        // filename: '[name].[chunkhash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
 
         // show comments in bundles, just to beautify the output of this example.
@@ -46,7 +47,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                       // 添加 ES6， react 语法支持
-                      presets: [['es2015',{ modules: false }], 'react'],
+                      presets: [['es2015',{ 'modules': false }], ['es2015',{ 'loose': true }], 'react'],
                       plugins: [
                         // 支持语法动态导入 Using import()
                         'syntax-dynamic-import',
@@ -54,7 +55,6 @@ module.exports = {
                         // To use ES2017 async/await with import():
                         'transform-async-to-generator',
                         'transform-regenerator',
-
                         'transform-runtime'
                       ]
 
@@ -92,13 +92,13 @@ module.exports = {
     devServer: {
         // https: true,
         host: 'localhost',
-        port: 8081
+        port: 7080
     },
     plugins: [
         new HtmlWebpackPlugin({ title: '使用HtmlWebpackPlugin' }),
         new ExtractTextWebpackPlugin('resources/style/app.css'),
         new ExtractTextWebpackPlugin('resources/style/card.css'),
-        new ExtractTextWebpackPlugin('resources/style/style.css'),
+        new ExtractTextWebpackPlugin('resources/style/style.css')
         // 公共代码 bundle
         // new webpack.optimize.CommonsChunkPlugin({
         //   name: 'vendor', // Specify the common bundle's name.
@@ -109,8 +109,8 @@ module.exports = {
         //   }
         // }),
         // webpack 运行时代码
-        new webpack.optimize.CommonsChunkPlugin({
+        /*new webpack.optimize.CommonsChunkPlugin({
           name: 'manifest'
-        })
+        })*/
     ]
 };

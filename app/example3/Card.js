@@ -1,4 +1,13 @@
 import React from 'react';
+//require('react');
+
+/*require('es5-shim');
+require('es5-shim/es5-sham');*/
+
+/*require('fetch-ie8');
+require('console-polyfill');
+require('es6-promise');
+require('babel-polyfill');*/
 
 function Card(props) {
   return (
@@ -18,4 +27,3 @@ function Card(props) {
   )
 }
 export default Card;
-

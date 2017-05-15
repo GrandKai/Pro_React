@@ -42,8 +42,9 @@ let newsList = [
 ];
 let image = {href: "http://www.linlongtougu.com/infomation/2659/4/detail.html", imageSrc:"http://resource.1shitou.cn/pic/defaultImg/qTEzVWkVwr.jpg"};
 let detail = {list: newsList, image: image, href: "http://www.linlongtougu.com/infomation/4/newsMoreList.html", title: "操盘必读"};
-// ReactDOM.render(<Card {...props}/>, app);
+ReactDOM.render(<Card {...props}/>, app);
 // ReactDOM.render(<NewsList list={ newsList }/>, app2);
 // ReactDOM.render(<NewsDetail detail={detail}/>, app3);
+
 let box = [detail, detail, detail];
 ReactDOM.render(<NewsBox boxs={box}/>, app4);
