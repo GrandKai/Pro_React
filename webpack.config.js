@@ -18,7 +18,8 @@ module.exports = {
         // index: path.resolve(APP_PATH, 'index.jsx')
     },
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].js',
+        // filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
 
         // show comments in bundles, just to beautify the output of this example.
@@ -31,6 +32,7 @@ module.exports = {
             {
               test: /\.css$/,
               use: ExtractTextWebpackPlugin.extract({
+                fallback: "style-loader",
                 use: ['css-loader']
               }),
               include: APP_PATH
@@ -96,9 +98,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ title: '使用HtmlWebpackPlugin' }),
-        new ExtractTextWebpackPlugin('resources/style/app.css'),
-        new ExtractTextWebpackPlugin('resources/style/card.css'),
-        new ExtractTextWebpackPlugin('resources/style/style.css'),
+        new ExtractTextWebpackPlugin({filename: "resources/style/[name].css"}),
+        // new ExtractTextWebpackPlugin('resources/style/app.css'),
+        // new ExtractTextWebpackPlugin('resources/style/card.css'),
+        // new ExtractTextWebpackPlugin('resources/style/style.css'),
         // 公共代码 bundle
         // new webpack.optimize.CommonsChunkPlugin({
         //   name: 'vendor', // Specify the common bundle's name.
