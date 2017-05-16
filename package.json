@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "http-server",
+    "babel": "babel app -d lib",
     "build": "webpack -p",
     "build2": "babel --no-babelrc app --out-dir lib --presets=es2015,react",
     "build_file": "babel --no-babelrc app/CheckList.js --out-file checklist.min.js --presets=es2015,react --minified",
