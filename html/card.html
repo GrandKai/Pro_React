@@ -4,7 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="resources/style/card.css"/>
+  <link rel="stylesheet" href="resources/style/style.css"/>
+
+
   <title>React 范例</title>
+
+  <script type="text/javascript" src="./js/es5-sham.js"></script>
+  <script type="text/javascript" src="./js/es5-shim.js"></script>
+  <!-- <script type="text/javascript" src="require.js"></script> -->
+
+  <!--<script src="https://cdn.bootcss.com/react/0.14.8/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/0.14.8/react-dom.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>-->
+
+
+  <script type="text/javascript" src="./js/react.min.js"></script>
+  <script type="text/javascript" src="./js/react-dom.min.js"></script>
+  <script src="./js/babel.min.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+
+  <!-- <script type="text/javascript" src="./js/browser.min.js"></script> -->
+  <!-- <script type="text/babel" src="Card.js"></script> -->
+
+ <!--<script src="../lib/Hello.js"></script>-->
+
+
   <!--[if lt IE 10]>
       <script src="./js/matchMedia.js"></script>
       <script src="./js/matchMedia.addListener.js"></script>
@@ -13,46 +39,42 @@
 </head>
 <body>
   <div id="app"></div>
-  <script type="text/javascript" src="./js/es5-sham.js"></script>
-  <script type="text/javascript" src="./js/es5-shim.js"></script>
-  <!-- <script type="text/javascript" src="require.js"></script> -->
-  <script type="text/javascript" src="./js/react.js"></script>
-  <script type="text/javascript" src="./js/react-dom.js"></script>
-  <script type="text/javascript" src="./js/babel.min.js"></script>
-  <script src="../dist/main.js"></script>
- <!--<script src="../lib/example3/Card.js"></script> -->
+ <!--<script type="text/babel">
+   var Hello = React.createClass({
+     render: function() {
+       return (<h1>Hello {this.props.name}</h1>);
+     }
+   });
 
-  <!--<script type="text/babel" >
-  var cardsList = [{
-    id: 1,
-    title: 'Read the Book',
-    description: 'I should read the whole book',
-    status: 'in-progress',
-    tasks: []
-  }, {
-    id: 2,
-    title: 'Write some code',
-    description: 'Code along with the samples in the book',
-    status: 'todo',
-    tasks: [{
-      id: 1,
-      name: 'ContactList Example',
-      done: true
-    }, {
-      id: 2,
-      name: 'Kanban Example',
-      done: true
-    }, {
-      id: 3,
-      name: 'My own experiments',
-      done: true
-    }]
-  }];
+   var app = document.createElement('div');
+   document.body.appendChild(app);
+  //  console.log(Hello);
 
-  var app = document.createElement('div');
-  document.body.appendChild(app);
+  var user = "john.";
+   ReactDOM.render(<Hello name={user} />, document.getElementById('app'));
+ </script>-->
 
-  ReactDOM.render(<Card cards={cardsList}/>, document.getElementById('app'));
-  </script>-->
+ <script type="text/javascript" src="../lib/example3/Card.js"></script>
+ <!-- <script type="text/babel" src="http://localhost/card.js"></script> -->
+
+  <script type="text/javascript" >
+
+    var cardData = {
+      href: "http://www.linlongtougu.com/KKplayerVod/index.html",
+      imageUrl: "http://resource.1shitou.cn/resource/images/video.png",
+      title: "视频点播",
+      content: "丰富的视频教学内容，雄厚的讲师队伍。集投资理念与实战方法于一体的视频理财教学网，让您学习赚钱两不误！",
+      ".card-column": "recommend-column clearfix",
+      ".card-img": "column-img",
+      ".card-title": "column-text",
+      ".card-content": "column-detail"
+    };
+
+    var app = document.createElement('div');
+    document.body.appendChild(app);
+    Card.renderCard(cardData, app);
+    // ReactDOM.render(<Card {...cardData} />, document.getElementById('app'));
+  </script>
+
 </body>
 </html>
